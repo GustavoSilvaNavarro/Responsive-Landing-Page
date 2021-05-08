@@ -1,0 +1,129 @@
+body{
+    background:rgba(0, 0, 0, .9); /*esto es color rgba donde pongo los numeros de los colores por coma y al final va la opacidad*/
+    margin: 0; /* Reseteo los valores de margen que por defecto los pone*/
+    color: white; /*pongo color a todas las funtes de las letras y los iconos*/
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.header::after{ /*En Css tenemos una pseudoclase llamada after que permite añaidr contenido como una imagen despues de este elemento, sino tendriamos que ponerlo desde el codigo html*/
+    content: '';/* como quiero que se muestre la imgen coloco esto, con el fin de que funciones*/
+    height: 100vh; /*con el fin de que ocupe todo el alto y lo mismo con el ancho*/
+    width: 100%;
+    background-image: url(../pics/background.jpg); /*para colocar una imagen de background se debe colocar de la manera en que se muetra y colocar la url que es donde esta la imagen como esta dentro de la carpera pics tengo que subir un nivel para llegar a ella eso lo hago colocando dos puntos seguido al comienzo*/
+    background-size: cover;/*esto me permite tomar la imagen y la pone en el maximo tamaño del elemento*/
+    display: block; /*coloco esto para que lo pueda leer el codigo ya que es un bloque más*/
+    background-repeat: none; /*lo hago con el fin de que la imagen no se repita y abarque 100%*/
+    background-position: center;/*centro la imagen*/
+    filter: blur(10px); /*para ponerle el efecto blur o de dsitrosionamiento o enfoeque de la imagen*/
+    -webkit-filter: blur(10px); /*lo hago con el fin de que este sea soportado por chrome y pueda ser soportado por ese navegador*/
+    transition: all 1000ms; /* esto lo hago para que tenga una transición y el cambio no sea brusco*/
+}
+.header:hover::after{ /*se hace lo mismo ya que quisiera alterar el fondo el after que habia declarado arriba*/
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.header:hover .header-content{ /*lo hago con el fin de que salga el efecto de que cuando ponga mi cursor, lo pongo de esta manera ya que se refiere a que esa subclase hover va a alterar el contenido*/
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+.header-content{
+    position: absolute; /*lo hago con el fin de que el contenido no este uno encima del otro sino esten uno dentro del otro*/
+    z-index: 1; /*con esta regla hago que pase adelante el contenido, encima de la imagen de fondo*/
+    top: 10%; /*hace que mi contenido empiece a un  10% del borde superior*/
+    left: 50%;/*hago que mi contenido empiece al 50% del orde izquierdo*/
+    margin-top: 105px;
+    margin-left: -145px;
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    transition: all 1000ms; /*si quiero que se de el efecto debo colocar el transition que habia colocado antes*/
+}
+.header-content .logo{
+    height: 200px;
+    width: 200px;
+}
+.title{
+    font-family: 'Oswald', sans-serif;
+    font-size:  2rem;
+}
+.text{
+    line-height: 1.7; /*interlineado*/
+    margin-top: 1rem;
+}
+.container {
+    max-width: 960px; /*le digo el tamaño máximo o rango de tamaño*/
+    margin: auto; /* lo centro automaticamente a los lados en el medio*/
+    overflow: hidden; /*el overflow sirve para modificar los limites del contenido si le pongo hidden el navegador no moestrara el contenido si le pongo visible si lo moestrara y si le pongo scroll mostrara una scroll donde pueda ver el contenido moviendo las barras*/
+    padding: 4rem 1rem; /*el primero es para arriba y abajo y el segundo para los lados*/
+}
+/*CREACION DE GRILLAS*/
+.grid-3{
+    display: grid; /*gracias a esto se va a poder dividir el contenido pero no sabe en cuantas partes*/
+    grid-template-columns: repeat(3, 1fr);/*gracias a esto le digo en cuantas partes se va a dividir, le estoy diciendo que se repita 3 veces 1 fraccion (1fr) division entre tres*/
+    grid-gap: 20px; /*le doy un pequeño espaciado entre cada columna*/
+}
+.grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*es lo mismo que usar el repeat*/
+    grid-gap: 20px;
+}
+.text-center{
+    text-align: center;
+    margin: auto;
+}
+.bg-light{
+    background: #ffffff;
+    color: #333;
+}
+.bg-dark{
+    background: #2f3542;
+    color: #fff;
+}
+.services{
+    padding: 2rem 0;
+}
+.footer{
+    padding: 0.3rem;
+}
+.footer p{
+    margin: 0;
+}
+
+/*AGREGAR REGLAS PARA QUE SEA RESPONSIVE Y SE PUEDE VER EN PEQUEÑOS DISPOSITIVOS COMO CELULARES*/
+/*Se deben usar medidas queries*/
+@media(max-width: 560px) {
+    .header::after{ /*voy a modificar el header after*/
+        height: 50vh; /*ya no va a ocupar todo sino la mitad*/
+    }
+    .header-content{ /*el contenido de la cabecera va a modifcarse a empezar al 5% de la pagina sumado el margen de 5px*/
+        top: 5%; 
+        margin-top: 5px;
+    }
+    .header-content .logo{
+        height: 120px;
+        width: 120px;
+    }
+    .header-content .text{
+        display: none; /*hago que el texto de la cabecera se borre una vez que este dentro del rango de tamaño*/
+    }
+/*MODIFICAR LOS SERVICIOS, MODIFICACION DE GRILLA*/
+    .grid-3, .grid-2{ /*lo que le dijo al CSS es quiero modificar tanto la grilla de 3 como la de 2*/
+        grid-template-columns: 1fr; /*lo ajusto a que cuando este dentro del rango de tamaño se ajuste a una sola*/
+    }
+    .services{
+        padding: 1rem 1rem;
+    }
+    .container{
+        padding: 0.5rem 1rem;
+    }
+}
+
+/*El contenido en responsive luce bien excepto cuando se rota la pantalla que se nota raro, asi lo solucionas*/
+@media(max-height: 500px){
+    .header-content .text{
+        display: none;
+    }
+    .header-content{
+        top: 0;
+    }
+}

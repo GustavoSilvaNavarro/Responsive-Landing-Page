@@ -1,0 +1,85 @@
+<!--El live server me permite que el documento se vaya actualizando en tiempo real si que lo actualice-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawaiian Llama Beer</title>
+<!--Font Awesome, agrego el CDM que me trae los iconos de awesome font-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+<!--GOOGLE FONTS, agrego el archivo CDN que conecta con la fuente a mi html-->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<!--FUENTE PARA TITULOS-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<!--ANIMATE.CSS, AGREGO ANIMACIONES A LOS TITULOS DEL CODIGO-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+<!--Agrego Archivo Css-->
+    <link rel="stylesheet" href="CssCode/style.css">
+</head>
+<body>
+<!--HEADER-->
+    <header class="header">
+        <div class="header-content animate__animated animate__flash animate__delay-2s">
+            <img src="pics/ClipartKey_94205.jpg" alt="Gustavo's Logo" class="logo">
+            <h3 class="title">Hawaiian Llama</h3>
+            <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet deserunt harum illum a doloremque sequi.</p>
+        </div>
+    </header>
+<!--SERVICES-->
+    <section class="services text-center">
+        <h3 class="title">Services</h3>
+        <div class="container grid-3"> <!--podria poner aca un article pero mejor pongo un div que es el contenedor donde van a ir mis tre columnas lo voy a ahcer don css eso y luego coloco el contenido por el que esta formado-->
+            <div> <!--creo otro div para hacer la separación de las tres columnas es decir su contenido, ya que la grilla de css lo considera de esa forma-->
+                <i class="fab fa-youtube fa-5x"></i><!--esta etiqueta la uso para poner un icono que lo voy a traer de font awesome, copio de la pagina el icono html y para agrandar el tamaño solo le coloco el fa-10x o 4x asi voy variando el tamaño dentro de la clase-->
+                <h3>Youtube</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem iste deserunt iure perferendis, incidunt doloribus.</p>
+            </div>
+
+            <div> <!--creo otro div para hacer la separación de las tres columnas es decir su contenido, ya que la grilla de css lo considera de esa forma-->
+                <i class="fab fa-blogger fa-5x"></i><!--esta etiqueta la uso para poner un icono que lo voy a traer de font awesome, copio de la pagina el icono html y para agrandar el tamaño solo le coloco el fa-10x o 4x asi voy variando el tamaño dentro de la clase-->
+                <h3>Blog</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem iste deserunt iure perferendis, incidunt doloribus.</p>
+            </div>
+
+            <div> <!--creo otro div para hacer la separación de las tres columnas es decir su contenido, ya que la grilla de css lo considera de esa forma-->
+                <i class="fab fa-wordpress fa-5x"></i><!--esta etiqueta la uso para poner un icono que lo voy a traer de font awesome, copio de la pagina el icono html y para agrandar el tamaño solo le coloco el fa-10x o 4x asi voy variando el tamaño dentro de la clase-->
+                <h3>Website</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem iste deserunt iure perferendis, incidunt doloribus.</p>
+            </div>
+        </div>
+    </section>
+<!--PROGRAMMING-->
+    <section class="programming bg-light">
+        <div class="container text-center">
+            <div class="container grid-2">
+                <div class="center">
+                    <i class="fab fa-node-js fa-10x"></i>
+                </div>
+                <div>
+                    <h3 class="title">Programming Courses</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, soluta voluptatem. A dolorem eaque, modi cupiditate inventore quis et ab!</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+<!--ABOUT-->
+    <section class="programming bg-dark">
+        <div class="container text-center grid-2">
+            <div>
+                <h3 class="title">About Us</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, soluta voluptatem. A dolorem eaque, modi cupiditate inventore quis et ab!</p>
+            </div>
+
+            <div class="center">
+                <i class="fas fa-code fa-10x"></i>
+            </div>
+        </div>
+    </section>
+<!--FOOTER-->
+    <footer class="footer text-center bg-light">
+        <p>Gustavo Silva &copy; 2020 - All right reserved.</p>
+    </footer>
+</body>
+</html>
